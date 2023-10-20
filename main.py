@@ -38,7 +38,7 @@ parser.add_argument('--residual', type=bool, default=True)
 parser.add_argument('--patch_size', type=int, default=40, help='Size of cropped HR image')
 parser.add_argument('--pretrained_sr', default='MIX2K_LR_aug_x4dl10DBPNITERtpami_epoch_399.pth', help='sr pretrained base model')
 parser.add_argument('--pretrained', type=bool, default=False)
-parser.add_argument('--save_folder', default='weights/', help='Location to save checkpoint models')
+parser.add_argument('--save_folder', default='/kaggle/working/DBPN', help='Location to save checkpoint models')
 parser.add_argument('--prefix', default='tpami_residual_filter8', help='Location to save checkpoint models')
 
 opt = parser.parse_args()
