@@ -71,6 +71,7 @@ if cuda:
     model = model.cuda(gpus_list[0])
 
 def eval():
+    torch.cuda.empty_cache()
     model.eval()
     for batch in testing_data_loader:
         with torch.no_grad():
