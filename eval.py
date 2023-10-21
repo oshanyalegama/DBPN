@@ -68,7 +68,7 @@ model.load_state_dict(torch.load(opt.model, map_location=lambda storage, loc: st
 print('Pre-trained SR model is loaded.')
 
 if cuda:
-    model = model.cuda(gpus_list[0])
+    model = model.cuda(gpus_list[1])
 
 def eval():
     
@@ -78,7 +78,7 @@ def eval():
         with torch.no_grad():
             input, bicubic, name = Variable(batch[0]), Variable(batch[1]), batch[2]
         if cuda:
-            input = input.cuda(gpus_list[1])
+            input = input.cuda(gpus_list[0])
             bicubic = bicubic.cuda(gpus_list[0])
 
         t0 = time.time()
