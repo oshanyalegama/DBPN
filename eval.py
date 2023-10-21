@@ -67,8 +67,8 @@ if cuda:
 model.load_state_dict(torch.load(opt.model, map_location=lambda storage, loc: storage),strict=False)
 print('Pre-trained SR model is loaded.')
 
-# if cuda:
-#     model = model.cuda(gpus_list[1])
+if cuda:
+    model = model.cuda(gpus_list[0])
 
 def eval():
     
