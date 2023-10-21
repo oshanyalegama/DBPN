@@ -78,7 +78,7 @@ def eval():
         with torch.no_grad():
             input, bicubic, name = Variable(batch[0]), Variable(batch[1]), batch[2]
         if cuda:
-            input = input.cuda(gpus_list[0])
+            input = input.cuda(gpus_list[1])
             bicubic = bicubic.cuda(gpus_list[1])
 
         t0 = time.time()
