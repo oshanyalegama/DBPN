@@ -64,7 +64,7 @@ else:
 if cuda:
     model = torch.nn.DataParallel(model, device_ids=gpus_list)
 
-model.load_state_dict(torch.load(opt.model, map_location=lambda storage, loc: storage))
+model.load_state_dict(torch.load(opt.model, map_location=lambda storage, loc: storage),strict=False)
 print('Pre-trained SR model is loaded.')
 
 if cuda:
